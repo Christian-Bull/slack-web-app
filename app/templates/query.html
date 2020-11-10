@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>run query</h1>
+<form action="" method="get" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.channel.label }}
+        {{ form.channel(size=32) }}
+    </p>
+    <p>
+        {{ form.name.label }}
+        {{ form.name(size=32) }}
+    <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}
