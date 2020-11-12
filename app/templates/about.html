@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
-{% block content %}
-
-<div style="float: left; text-align:center;">
-<a href="https://github.com/Christian-Bull">
-    <img src="{{url_for('static', filename='broccoli.jpeg')}}" width="200px">
-    <div style="text-align: center;" style="width: 200px">github link</div>
-</a>
+{% block app_content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="media">
+            <a href="https://github.com/Christian-Bull">
+                <img class="mr-3" src="{{url_for('static', filename='broccoli.jpeg')}}" width="200px">
+            </a>
+            <div class="media-body">
+                <br>
+                Disclaimer - I am not a web developer, 
+                just trying out a few new things
+                Click the broccoli for this sites github repo
+            </div>
+        </div>
+    </div>
 </div>
-
-
 {% endblock %}

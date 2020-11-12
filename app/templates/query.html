@@ -1,18 +1,12 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
 
-<h1>run query</h1>
-<form action="" method="get" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.channel.label }}
-        {{ form.channel(size=32) }}
-    </p>
-    <p>
-        {{ form.name.label }}
-        {{ form.name(size=32) }}
-    <p>{{ form.submit() }}</p>
-</form>
+<div class="row">
+    <div class="col-md-4">
+        {{ wtf.quick_form(form) }}
+    </div>
+</div>
 
 {% endblock %}

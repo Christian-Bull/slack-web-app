@@ -1,8 +1,9 @@
+from app import models
 from flask_wtf import Form
-from wtforms import StringField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms import StringField, BooleanField, SubmitField, SelectField
+from wtforms import validators
 
 class searchQuery(Form):
-    channel = StringField('channel', validators=[DataRequired()])
-    name = StringField('name')
+    channel = SelectField('channel', choices=models.getDistinctChannels())
+    name = StringField('name', [validators.optional()])
     submit = SubmitField('query')

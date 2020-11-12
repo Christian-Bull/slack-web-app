@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>server had issues - 500</h1>
+    <img src="{{url_for('static', filename='error.gif')}}">
+{% endblock %}

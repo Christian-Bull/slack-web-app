@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<div class="container">
+    <div class="row">
+        <div class="span4"></div>
+        <div class="span4">
+            <img class="center-block" src="{{url_for('static', filename='error.gif')}}">
+            <h1 style="text-align: center;">404</h1>
+        </div>
+        <div class="span4"></div>
+    </div>
+</div>
+
+
+{% endblock %}

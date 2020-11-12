@@ -1,4 +1,4 @@
-from flask import render_template, flash
+from flask import render_template, redirect
 from app import app, PyMongo
 from app.forms import searchQuery
 
@@ -17,7 +17,7 @@ def about():
         workspace=app.config['WORKSPACE']
     )
 
-@app.route('/query')
+@app.route('/query', methods=['GET', 'POST'])
 def query():
     form = searchQuery()
     return render_template('query.html',
