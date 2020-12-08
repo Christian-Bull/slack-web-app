@@ -7,6 +7,10 @@
     <h1>Get pins</h1>
 </div>
 
-
+{% for i in data %}
+<p>
+    {{ i.date }}: {{ i.user }} - {{ i.text }}
+</p>
+{% endfor %}
 
 {% endblock %}

@@ -15,4 +15,11 @@ def get_channel_id(channel_name):
 
 # returns user id
 def get_user_id(username):
-    return mongo.db.users.find_one({"name": username})['id']
+    user_id = mongo.db.users.find_one({"profile.display_name": username})
+    
+    # if user is not found, return None
+    if user_id == None:
+        return None
+    elif user_id != None:
+        return user_id['id']
+    
