@@ -4,6 +4,11 @@ from wtforms import StringField, BooleanField, SubmitField, SelectField
 from wtforms import validators
 
 class searchQuery(Form):
-    channel = SelectField('channel', choices=models.getDistinctChannels())
-    name = StringField('name', [validators.optional()])
+    channel = SelectField('channel', choices=models.get_distinct_channels())
+    name = StringField('display name', [validators.optional()])
+    results_limit = SelectField('results limit',
+        [validators.optional()],
+        choices=[i for i in range(26)]
+    )
     submit = SubmitField('query')
+
