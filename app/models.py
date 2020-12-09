@@ -22,4 +22,13 @@ def get_user_id(username):
         return None
     elif user_id != None:
         return user_id['id']
-    
+
+# return username
+def get_user_name(user_id):
+    username = mongo.db.users.find_one({"id": user_id})
+
+    # if user is not found, return None
+    if username == None:
+        return None
+    elif username != None:
+        return username['profile']['display_name']

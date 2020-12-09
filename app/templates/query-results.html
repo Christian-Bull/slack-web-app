@@ -3,14 +3,28 @@
 
 {% block app_content %}
 
-<div class="h1">
-    <h1>Get pins</h1>
+<div class="h3">
+    <h3>query results</h3>
 </div>
 
-{% for i in data %}
-<p>
-    {{ i.date }}: {{ i.user }} - {{ i.text }}
-</p>
-{% endfor %}
+<div>
+
+    <table class="table">
+        <tr>
+            {% for header in headers %}
+                <th scope="col"> {{ header }} </th>
+            {% endfor %}
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            {% for key in i %}
+                <td> {{ i[key] }} </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
 
 {% endblock %}
